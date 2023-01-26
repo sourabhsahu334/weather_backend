@@ -7,7 +7,7 @@ app.use(cors())
 app.use(cors({
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
-  origin: ['http://localhost:3003', 'http://localhost:4000']
+  origin: ['https://sourabhsahu334.github.io/weather_information/']
 }));
 
 
@@ -42,9 +42,9 @@ app.get('/weather/:page', (req, res) => {
             res.json({error: err});
         });
 });
-if(process.env.NODE_ENV== "production"){
-    app.use(express.static("../build"))
-}
+// if(process.env.NODE_ENV== "production"){
+//     app.use(express.static("../build"))
+// }
 
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {
